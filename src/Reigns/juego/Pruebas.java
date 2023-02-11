@@ -34,5 +34,6 @@ public class Pruebas {
         P = new Extraño();
         P.dibujar(G);
         t.leerCaracter();
+        System.out.println("a");
     }
 }
