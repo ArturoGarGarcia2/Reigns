@@ -7,19 +7,7 @@ import java.awt.Graphics;
 public class Extraño extends Personaje{
     
     public Extraño() {
-        super("???", 0,
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {}
-        );
+        super("???", 0);
     }
     
     public void dibujar(Graphics G){

@@ -19,22 +19,62 @@ public abstract class Personaje {
     protected String[] rNegativasEsp;
     protected String[] ePositivasEsp;
     protected String[] eNegativasEsp;
+    
 
-    public Personaje(String nombre, int numero, String[] mensajes, String[] rPositivas, String[] rNegativas, String[] ePositivas, String[] eNegativas, String[] mensajesEsp, String[] rPositivasEsp, String[] rNegativasEsp, String[] ePositivasEsp, String[] eNegativasEsp) {
+    public Personaje(String nombre, int numero) {
         this.nombre = nombre;
         this.numero = numero;
+        this.mensajes = new String[0];
+        this.rPositivas = new String[0];
+        this.rNegativas = new String[0];
+        this.ePositivas = new String[0];
+        this.eNegativas = new String[0];
+        this.mensajesEsp = new String[0];
+        this.rPositivasEsp = new String[0];
+        this.rNegativasEsp = new String[0];
+        this.ePositivasEsp = new String[0];
+        this.eNegativasEsp = new String[0];
+    }
+
+    public void setMensajes(String[] mensajes) {
         this.mensajes = mensajes;
+    }
+
+    public void setrPositivas(String[] rPositivas) {
         this.rPositivas = rPositivas;
+    }
+
+    public void setrNegativas(String[] rNegativas) {
         this.rNegativas = rNegativas;
+    }
+
+    public void setePositivas(String[] ePositivas) {
         this.ePositivas = ePositivas;
+    }
+
+    public void seteNegativas(String[] eNegativas) {
         this.eNegativas = eNegativas;
+    }
+
+    public void setMensajesEsp(String[] mensajesEsp) {
         this.mensajesEsp = mensajesEsp;
+    }
+
+    public void setrPositivasEsp(String[] rPositivasEsp) {
         this.rPositivasEsp = rPositivasEsp;
+    }
+
+    public void setrNegativasEsp(String[] rNegativasEsp) {
         this.rNegativasEsp = rNegativasEsp;
+    }
+
+    public void setePositivasEsp(String[] ePositivasEsp) {
         this.ePositivasEsp = ePositivasEsp;
+    }
+
+    public void seteNegativasEsp(String[] eNegativasEsp) {
         this.eNegativasEsp = eNegativasEsp;
     }
-    
     
     public void aplicar(boolean resp,Rey R){
         
@@ -54,11 +94,11 @@ public abstract class Personaje {
     }
     
     public void ToString(){
-        System.out.println(this.nombre+" os dice...");
-        System.out.println(this.mensajes[this.numero]);
+        System.out.println(nombre+" os dice...");
+        System.out.println(mensajes[numero]);
         System.out.println("");
-        System.out.println("1. "+this.rPositivas[this.numero]);
-        System.out.println("2. "+this.rNegativas[this.numero]);
+        System.out.println("1. "+rPositivas[numero]);
+        System.out.println("2. "+rNegativas[numero]);
     }
     
     public int[] formaModificada(int[] i,int f,int p){

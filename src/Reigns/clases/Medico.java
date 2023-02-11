@@ -6,19 +6,7 @@ import java.awt.Graphics;
 
 public class Medico extends Personaje{
     public Medico() {
-        super("El Médico", 0,
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {}
-        );
+        super("El Médico", 0);
     }
     
     public void dibujar(Graphics G){

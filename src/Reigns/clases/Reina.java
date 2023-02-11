@@ -3,32 +3,37 @@ package Reigns.clases;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Reina extends Personaje{
 
     public Reina() {
-        super("La Reina", 0,
-                new String[] {"Deberíamos mostrarle al pueblo lo unidos que estamos",
+        super("La Reina", 0);
+        String[] mensajes = {"Deberíamos mostrarle al pueblo lo unidos que estamos",
                              "¡Están saqueando el almacén comunal!",
-                             "Deberíamos casarnos de nuevo"},
-                new String[] {"Me parece idóneo",
+                             "Deberíamos casarnos de nuevo"};
+        setMensajes(mensajes);
+        
+        String[] rPositivas = {"Me parece idóneo",
                                  "Mandad a la guarnición",
-                                 "Acepto"},
-                new String[] {"Estamos bien así",
+                                 "Acepto"};
+        setrPositivas(rPositivas);
+        
+        String[] rNegativas = {"Estamos bien así",
                                  "No podemos hacer nada",
-                                 "Tengo cosas más importantes"},
-                new String[] {": Igl +15 / Pob +10",
+                                 "Tengo cosas más importantes"};
+        setrNegativas(rNegativas);
+        
+        String[] ePositivas = {": Igl +15 / Pob +10",
                                  ": Pob: +15 / Eje -15",
-                                 ": Eco -30 / Pob +20 / Igl +30"},
-                new String[] {": Igl -15 / Pob -10",
+                                 ": Eco -30 / Pob +20 / Igl +30"};
+        setePositivas(ePositivas);
+        
+        String[] eNegativas = {": Igl -15 / Pob -10",
                                  ": Pob -30",
-                                 ": Igl -10 / Pob -10"},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {}
-                );
+                                 ": Igl -10 / Pob -10"};
+        seteNegativas(eNegativas);
     }
     
     public String getMensajeEsp(int i){

@@ -8,19 +8,36 @@ import java.util.HashSet;
 public class General extends Personaje{
 
     public General() {
-        super("El General", 0,
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {},
-                new String[] {}
-        );
+        super("El General", 0);
+        String[] mensajes = {"Las armas están oxidadas, necesitamos reponerlas",
+                             "¡El reino vecino nos ataca!",
+                             "Deberíamos pedir ejército a la iglesia"}
+;
+        setMensajes(mensajes);
+        
+        String[] rPositivas = {"Tomad cuanto necesiteis",
+                               "Proteged al pueblo",
+                               "Estoy de acuerdo"}
+;
+        setrPositivas(rPositivas);
+        
+        String[] rNegativas = {"Estamos bien así",
+                               "Proteged mi tesoro",
+                               "No es mi problema"}
+;
+        setrNegativas(rNegativas);
+        
+        String[] ePositivas = {": Eje +15 / Eco -15",
+                               ": Eje -10 / Eco -20",
+                               ": Eje +10 / Igl -10"}
+;
+        setePositivas(ePositivas);
+        
+        String[] eNegativas = {": Eje -15",
+                               ": Eje -10 / Pob -20",
+                               ": Eje -20 / Igl +10"}
+;
+        seteNegativas(eNegativas);
     }
     
     

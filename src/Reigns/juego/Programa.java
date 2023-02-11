@@ -18,7 +18,9 @@ public class Programa {
         while (repetir) {
 
             Personaje P = corte[new Random().nextInt(corte.length)];
-            P.setNumero(new Random().nextInt(P.getNumMensajes()));
+            int b = P.getNumMensajes();
+            int c = new Random().nextInt(b);
+            P.setNumero(c);
             
             R.alv();
             
