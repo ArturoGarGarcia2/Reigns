@@ -48,6 +48,14 @@ public class Medico extends Personaje{
             case 0 -> R.añadir(0, 0, 25, 0, -25, 0, res, 0, 0, -25, 0, 10, 0);
             case 1 -> R.añadir(0, -25, 25, 0, 0, 0, res, 0, 25, -25, 0, 0, 0);
             case 2 -> R.añadir(0, 0, 25, -25, 0, 0, res, 0, 0, -25, 25, 0, 0);
+            case 3 -> {
+                if(res){
+                    R.setClarividencia(true);
+                    R.setApelativo("el Clarividente");
+                }else{
+                    System.out.println("A");
+                }
+            }
             default -> {
             }
         }

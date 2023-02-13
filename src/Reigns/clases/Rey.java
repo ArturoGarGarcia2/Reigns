@@ -1,25 +1,35 @@
 
 package Reigns.clases;
 
+import java.util.Random;
+
 public class Rey {
 
     private String nombre;
+    private String apelativo;
     private int ocu;
     private int igl;
     private int pob;
     private int eje;
     private int eco;
     private int salud;
-    private String[] nomPropiedades = {"Ocultismo: ", "Iglesia: ", "Población: ", "Ejército: ", "Economía: ", "Salud: "};
+    private boolean clarividencia;
+    private int años;
 
-    public Rey(String n) {
-        nombre = n;
+    public Rey() {
+        String[] nombres = {"Argenis","Abarth","Auréllium","Árcturus","Astair","Fávro","Feltnos","Ferroz","Fénit","Kaenó","Kazrefti","Kolapsi","Kárthild","Vodbar","Zsolt","Závert","Zeldrie","Zósimo"};
+        nombre = nombres[new Random().nextInt(nombres.length)];
+        apelativo = "";
         ocu = 0;
         igl = 40;
         pob = 40;
         eje = 40;
         eco = 40;
         salud = 100;
+    }
+    
+    public void añadirAño(){
+        años++;
     }
 
     public int getIgl() {
@@ -33,6 +43,12 @@ public class Rey {
     }
     public int getEco() {
         return eco;
+    }
+    public boolean clarividencia() {
+        return clarividencia;
+    }
+    public void setClarividencia(boolean clarividencia) {
+        this.clarividencia = clarividencia;
     }
 
     public void alv() {
@@ -58,12 +74,19 @@ public class Rey {
             salud += nSalud;
         }
     }
+    
+    public void setApelativo(String a){
+        apelativo = a;
+    }
 
     public void ToString() {
+        /*
         System.out.println("Ocultismo: ");
         System.out.println(OcuToString());
         System.out.println("Salud: ");
         System.out.println(SaludToString());
+        */
+        System.out.println(nombre+" "+apelativo);
         System.out.println("");
         System.out.println("Iglesia: ");
         System.out.println(IglToString());
@@ -154,6 +177,10 @@ public class Rey {
     }
 
     public void fraseMuerto() {
+        System.out.println("Larga vida al rey "+nombre);
+        System.out.println("");
+        System.out.println("Años al mando: "+años);
+        System.out.println("");
         int muerte = Muerto();
         switch (muerte) {
             case 1 ->

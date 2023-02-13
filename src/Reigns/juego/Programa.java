@@ -6,17 +6,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Programa {
-
     public static void main(String[] args) {
 
-        Rey R = new Rey("a");
+        Rey R = new Rey();
         Reina Rei = new Reina();
         General Gen = new General();
         Extraño Ext = new Extraño();
         Medico Med = new Medico();
         Ramera Ram = new Ramera();
-        Personaje[] corte = {Rei, Gen, Ext, Med, Ram};
+        Cardenal Car = new Cardenal();
+        Personaje[] corte = {Rei, Gen, Ext, Med, Ram, Car};
         boolean repetir = true;
+        boolean pruebaPersonaje = true;
 
         while (repetir) {
 
@@ -27,15 +28,20 @@ public class Programa {
             
             /*
             PRUEBAS DE PERSONAJE ESPECÍFICO
-            P = corte[2];
-            P.setNumero(3);
+            
+            if(pruebaPersonaje){
+                P = corte[3];
+                P.setNumero(3);
+                pruebaPersonaje = false;
+            }
             */
+            
             
             R.alv();
             
             R.ToString();
             System.out.println("");
-            P.ToString();
+            P.ToString(R);
             boolean resp = false;
             boolean a = true;
             while (a) {
@@ -49,6 +55,7 @@ public class Programa {
                 }
             }
             P.aplicar(resp, R);
+            R.añadirAño();
 
             if (R.Muerto()!=0) {
                 R.alv();

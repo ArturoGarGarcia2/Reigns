@@ -46,7 +46,7 @@ public class General extends Personaje {
             case 1 ->
                 R.añadir(0, 0, 0, -15, -20, 0, res, 0, 0, -20, -15, 0, 0);
             case 2 ->
-                R.añadir(0, -10, 0, 10, -30, 0, res, 0, +10, 0, -20, 0, 0);
+                R.añadir(0, -10, 0, 10, 0, 0, res, 0, 10, 0, -20, 0, 0);
             default -> {
             }
         }
