@@ -22,6 +22,19 @@ public class Rey {
         salud = 100;
     }
 
+    public int getIgl() {
+        return igl;
+    }
+    public int getPob() {
+        return pob;
+    }
+    public int getEje() {
+        return eje;
+    }
+    public int getEco() {
+        return eco;
+    }
+
     public void alv() {
         for (int i = 0; i < 100; i++) {
             System.out.println("");

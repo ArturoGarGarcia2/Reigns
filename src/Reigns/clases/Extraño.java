@@ -8,6 +8,51 @@ public class Extraño extends Personaje{
     
     public Extraño() {
         super("???", 0);
+        cargarFrases();
+    }
+    
+    public void cargarFrases(){
+        String[] mensajes = {"¿De qué queréis que me ocupe?",
+                                              "¿De qué queréis que me ocupe?",
+                                              "¿De qué queréis que me ocupe?",
+                                              "¿De qué queréis que me ocupe?"};
+        setMensajes(mensajes);
+        
+        String[] rPositivas = {"De la Iglesia",
+                                                "De la Población",
+                                                "Del Ejército",
+                                                "De la Economía"};
+        setrPositivas(rPositivas);
+        
+        String[] rNegativas = {"De la Economía",
+                                                "De la Iglesia",
+                                                "De la Población",
+                                                "Del Ejército"};
+        setrNegativas(rNegativas);
+        
+        String[] ePositivas = {": Igl =50",
+                                                ": Pob =50",
+                                                ": Eje =50",
+                                                ": Eco =50"};
+        setePositivas(ePositivas);
+        
+        String[] eNegativas = {": Eco =50",
+                                                ": Igl =50",
+                                                ": Pob =50",
+                                                ": Eje =50"};
+        seteNegativas(eNegativas);
+    }
+    
+    @Override
+    public void aplicar(boolean res,Rey R){
+        switch (getNumero()) {
+            case 0 -> R.añadir(0, (-R.getIgl()+50), 0, 0, 0, 0, res, 0, 0, 0, 0, -R.getEco()+50, 0);
+            case 1 -> R.añadir(0, 0, (-R.getPob()+50), 0, 0, 0, res, 0, -R.getIgl()+50, 0, 0, 0, 0);
+            case 2 -> R.añadir(0, 0, 0, (-R.getEje()+50), 0, 0, res, 0, 0, -R.getPob()+50, 0, 0, 0);
+            case 3 -> R.añadir(0, 0, 0, 0, (-R.getEco()+50), 0, res, 0, 0, 0, -R.getEje()+50, 0, 0);
+            default -> {
+            }
+        }
     }
     
     public void dibujar(Graphics G){

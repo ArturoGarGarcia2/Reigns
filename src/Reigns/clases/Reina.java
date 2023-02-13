@@ -10,6 +10,10 @@ public class Reina extends Personaje{
 
     public Reina() {
         super("La Reina", 0);
+        cargarFrases();
+    }
+    
+    public void cargarFrases(){
         String[] mensajes = {"Deberíamos mostrarle al pueblo lo unidos que estamos",
                              "¡Están saqueando el almacén comunal!",
                              "Deberíamos casarnos de nuevo"};

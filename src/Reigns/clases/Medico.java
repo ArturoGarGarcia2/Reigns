@@ -7,6 +7,50 @@ import java.awt.Graphics;
 public class Medico extends Personaje{
     public Medico() {
         super("El Médico", 0);
+        cargarFrases();
+    }
+    
+    public void cargarFrases(){
+        String[] mensajes = {"La población está enferma, necesito más recursos",
+                             "Necesito vuestro permiso para poder experimentar",
+                             "Algunos de vuestros soldados necesitan descansar",
+                             "Estoy trabajando en un unguento, ¿Queréis probarlo?"};
+        setMensajes(mensajes);
+        
+        String[] rPositivas = {"Tomad cuanto necesitéis",
+                                                "Y yo os lo doy",
+                                                "Tenéis razón",
+                                                "Sí"};
+        setrPositivas(rPositivas);
+        
+        String[] rNegativas = {"Que se unten aceite en los pies",
+                                                "No me convence",
+                                                "Son fuertes",
+                                                "No"};
+        setrNegativas(rNegativas);
+        
+        String[] ePositivas = {": Pob +25 / Eco -25",
+                                                ": Pob +25 / Igl -25",
+                                                ": Pob +25 / Eje -25",
+                                                ""};
+        setePositivas(ePositivas);
+        
+        String[] eNegativas = {": Pob -25 / Eco +10",
+                                                ": Pob -25 / Igl +25",
+                                                ": Pob -25 / Eje +25",
+                                                ""};
+        seteNegativas(eNegativas);
+    }
+    
+    @Override
+    public void aplicar(boolean res,Rey R){
+        switch (getNumero()) {
+            case 0 -> R.añadir(0, 0, 25, 0, -25, 0, res, 0, 0, -25, 0, 10, 0);
+            case 1 -> R.añadir(0, -25, 25, 0, 0, 0, res, 0, 25, -25, 0, 0, 0);
+            case 2 -> R.añadir(0, 0, 25, -25, 0, 0, res, 0, 0, -25, 25, 0, 0);
+            default -> {
+            }
+        }
     }
     
     public void dibujar(Graphics G){

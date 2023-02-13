@@ -12,7 +12,10 @@ public class Programa {
         Rey R = new Rey("a");
         Reina Rei = new Reina();
         General Gen = new General();
-        Personaje[] corte = {Rei, Gen};
+        Extraño Ext = new Extraño();
+        Medico Med = new Medico();
+        Ramera Ram = new Ramera();
+        Personaje[] corte = {Rei, Gen, Ext, Med, Ram};
         boolean repetir = true;
 
         while (repetir) {
@@ -21,6 +24,12 @@ public class Programa {
             int b = P.getNumMensajes();
             int c = new Random().nextInt(b);
             P.setNumero(c);
+            
+            /*
+            PRUEBAS DE PERSONAJE ESPECÍFICO
+            P = corte[2];
+            P.setNumero(3);
+            */
             
             R.alv();
             
