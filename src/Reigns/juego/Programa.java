@@ -28,13 +28,13 @@ public class Programa {
             
             /*
             PRUEBAS DE PERSONAJE ESPECÍFICO
-            
+            */
             if(pruebaPersonaje){
                 P = corte[3];
                 P.setNumero(3);
                 pruebaPersonaje = false;
             }
-            */
+            
             
             
             R.alv();

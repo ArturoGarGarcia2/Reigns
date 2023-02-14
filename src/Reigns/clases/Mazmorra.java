@@ -3,6 +3,8 @@ package Reigns.clases;
 
 public class Mazmorra {
     private int[] pos;
+    
+    private int[][] sal = {{2,0},{5,0},{6,0},{0,1},{2,1},{3,2},{6,2},{2,3},{0,4},{3,4},{4,4},{6,5},{3,6},{5,6}};
     private boolean mercurio;
     private int[] posMercurio = {1,5};
     
@@ -129,7 +131,7 @@ public class Mazmorra {
                            a[0]==posNeptuno[0]&&a[1]==posNeptuno[1]&&neptuno? "N" :
                            a[0]==posLuna[0]&&a[1]==posLuna[1]&&luna? "L" :
                            a[0]==posSol[0]&&a[1]==posSol[1]&&sol? "S" :
-                           a[0]==pos[0]&&a[1]==pos[1]? "R" : "á";
+                           a[0]==pos[0]&&a[1]==pos[1]? "R" : " ";
                            
                 System.out.print("# "+L+" # ");
             }
@@ -140,5 +142,6 @@ public class Mazmorra {
             System.out.println("");
         }
     }
+    
     
 }

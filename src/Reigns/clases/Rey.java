@@ -86,7 +86,7 @@ public class Rey {
         System.out.println("Salud: ");
         System.out.println(SaludToString());
         */
-        System.out.println(nombre+" "+apelativo);
+        System.out.println(nombre+apelativo);
         System.out.println("");
         System.out.println("Iglesia: ");
         System.out.println(IglToString());
@@ -177,9 +177,10 @@ public class Rey {
     }
 
     public void fraseMuerto() {
-        System.out.println("Larga vida al rey "+nombre);
+        System.out.println("Larga vida al rey "+nombre+apelativo);
+        System.out.println("1903 - "+(años+1903));
         System.out.println("");
-        System.out.println("Años al mando: "+años);
+        System.out.println("Años reinados: "+años);
         System.out.println("");
         int muerte = Muerto();
         switch (muerte) {
@@ -265,18 +266,17 @@ public class Rey {
     }
 
     public int Muerto() {
-        int muerto = ocu>100? 1 :
-                     igl>=100? 2 :
-                     igl<=0? 3:
-                     pob>=100? 4:
-                     pob<=0? 5:
-                     eje>=100? 6:
-                     eje<=0? 7:
-                     eco>=100? 8:
-                     eco<=0? 9:
-                     false? 10: //trampa
-                     false? 11: //mazmorra realizada
-                     salud<0? 12:0;
-        return muerto;
+        return ocu>100? 1 :
+                igl>=100? 2 :
+                igl<=0? 3:
+                pob>=100? 4:
+                pob<=0? 5:
+                eje>=100? 6:
+                eje<=0? 7:
+                eco>=100? 8:
+                eco<=0? 9:
+                false? 10: //trampa
+                false? 11: //mazmorra realizada
+                salud<0? 12:0;
     }
 }

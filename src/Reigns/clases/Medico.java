@@ -51,7 +51,7 @@ public class Medico extends Personaje{
             case 3 -> {
                 if(res){
                     R.setClarividencia(true);
-                    R.setApelativo("el Clarividente");
+                    R.setApelativo(", el Clarividente");
                 }else{
                     System.out.println("A");
                 }

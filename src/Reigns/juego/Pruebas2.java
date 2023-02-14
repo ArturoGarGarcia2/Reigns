@@ -15,18 +15,25 @@ public class Pruebas2 {
             boolean a = true;
             while (a) {
                 int res = new Scanner(System.in).nextInt();
-                if (res == 1) {
-                    m.mover(0, 1);
-                    a = false;
-                } else if (res == 2) {
-                    m.mover(1, 0);
-                    a = false;
-                } else if (res == 3) {
-                    m.mover(0, -1);
-                    a = false;
-                } else if (res == 4) {
-                    m.mover(-1, 0);
-                    a = false;
+                switch (res) {
+                    case 1 -> {
+                        m.mover(0, 1);
+                        a = false;
+                    }
+                    case 2 -> {
+                        m.mover(1, 0);
+                        a = false;
+                    }
+                    case 3 -> {
+                        m.mover(0, -1);
+                        a = false;
+                    }
+                    case 4 -> {
+                        m.mover(-1, 0);
+                        a = false;
+                    }
+                    default -> {
+                    }
                 }
             }
             m.detectarPos();
