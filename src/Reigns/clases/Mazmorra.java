@@ -3,6 +3,7 @@ package Reigns.clases;
 
 public class Mazmorra {
     private int[] pos;
+    private Rey rey;
     
     private int[][] sal = {{2,0},{5,0},{6,0},{0,1},{2,1},{3,2},{6,2},{2,3},{0,4},{3,4},{4,4},{6,5},{3,6},{5,6}};
     private boolean mercurio;
@@ -33,7 +34,8 @@ public class Mazmorra {
     private int[] posSol = {5,1};
     
     
-    public Mazmorra(){
+    public Mazmorra(Rey r){
+        rey = r;
         int[] a = {0,3};
         pos = a;
         mercurio = false;
@@ -101,9 +103,17 @@ public class Mazmorra {
         if(pos[1]>6){
             pos[1]--;
         }
+        for(int i = 0 ; i<sal.length ; i++){
+            if(sal[i][0]==pos[0]&&sal[i][1]==pos[1]){
+                rey.añadir(0, 0, 0, 0, 0, -30, true, 0, 0, 0, 0, 0, 0);
+            }
+        }
     }
     
     public void ToString(){
+        System.out.println("Salud:");
+        System.out.println(rey.SaludToString());
+        System.out.println("");
         System.out.print("("+pos[0]+","+pos[1]+")");
         System.out.print("("+posMercurio[0]+","+posMercurio[1]+")");
         System.out.print("("+posVenus[0]+","+posVenus[1]+")");

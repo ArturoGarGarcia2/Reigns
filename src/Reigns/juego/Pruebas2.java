@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Pruebas2 {
 
     public static void main(String[] args) {
-        Mazmorra m = new Mazmorra();
         Rey R = new Rey();
+        Mazmorra m = new Mazmorra(R);
         while (true) {
             R.alv();
             m.ToString();

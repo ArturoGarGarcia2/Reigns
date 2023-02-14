@@ -15,7 +15,9 @@ public class Programa {
         Medico Med = new Medico();
         Ramera Ram = new Ramera();
         Cardenal Car = new Cardenal();
-        Personaje[] corte = {Rei, Gen, Ext, Med, Ram, Car};
+        Campesino Cam = new Campesino();
+        Burgues Bur = new Burgues();
+        Personaje[] corte = {Rei, Gen, Ext, Med, Ram, Car, Cam, Bur};
         boolean repetir = true;
         boolean pruebaPersonaje = true;
 
@@ -28,13 +30,13 @@ public class Programa {
             
             /*
             PRUEBAS DE PERSONAJE ESPECÍFICO
-            */
+            
             if(pruebaPersonaje){
                 P = corte[3];
                 P.setNumero(3);
                 pruebaPersonaje = false;
             }
-            
+            */
             
             
             R.alv();
