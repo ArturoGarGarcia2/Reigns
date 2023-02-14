@@ -15,6 +15,8 @@ public class Rey {
     private int salud;
     private boolean clarividencia;
     private int años;
+    private boolean trampa=false;
+    private boolean mazmorraCompleta=false;
 
     public Rey() {
         String[] nombres = {"Argenis","Abarth","Auréllium","Árcturus","Astair","Fávro","Feltnos","Ferroz","Fénit","Kaenó","Kazrefti","Kolapsi","Kárthild","Vodbar","Zsolt","Závert","Zeldrie","Zósimo"};
@@ -177,75 +179,111 @@ public class Rey {
     }
 
     public void fraseMuerto() {
-        System.out.println("Larga vida al rey "+nombre+apelativo);
-        System.out.println("1903 - "+(años+1903));
-        System.out.println("");
-        System.out.println("Años reinados: "+años);
-        System.out.println("");
+        
         int muerte = Muerto();
         switch (muerte) {
-            case 1 ->
+            case 1 -> {
                 System.out.println("""
                                    Vuestro reino ha sido víctima de vuestra megalomanía, habéis querido asir lo
                                    inasible condenando así a vuestro pueblo al infierno en vida, una vida que no
                                    pueden
                                    """);
-            case 2 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Oscuro");
+                }
+            }
+            case 2 -> {
                 System.out.println("""
                                    La iglesia os toma por insignificante,
                                    os han relevado de vuestros poderes,
                                    pasaréis el resto de vuestros días encerrado en las mazmorras
                                    mas vuestro nombre será recordado como mártir.
                                    """);
-            case 3 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Mártir");
+                }
+            }
+            case 3 -> {
                 System.out.println("""
                                    La iglesia está demasiado enfadada con vuestros actos,
                                    os han execrado y han mandado a la inquisición para
                                    erradicar vuestro reino como consecuencia a vuestra blasfemia.
                                    """);
-            case 4 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Hereje");
+                }
+            }
+            case 4 -> {
                 System.out.println("""
                                    El pueblo nunca se ha visto tan bien,
                                    los habéis colmado de tantos lujos que ya no les sois necesarios.
                                    Han tomado posesión del palacio real y os han exiliado educadamente.
                                    """);
-            case 5 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Exiliado");
+                }
+            }
+            case 5 -> {
                 System.out.println("""
                                    El pueblo nunca ha estado tan mal
                                    No tiene nada que perder por lo que os han hecho perder la cabeza,
                                    Literalmente.
                                    """);
-            case 6 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Tirano");
+                }
+            }
+            case 6 -> {
                 System.out.println("""
                                    Vuestro general ha mordido la mano que le daba de comer,
                                    ha reunido el ejército y han logrado un golpe de estado,
                                    habéis huido dejando atrás todo temiendo por vuestra vida.
                                    """);
-            case 7 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Revocado");
+                }
+            }
+            case 7 -> {
                 System.out.println("""
                                    El estado de vuestro ejército es deplorable,
                                    no habéis podido soportar la conquista del reino vecino.
                                    """);
-            case 8 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Débil");
+                }
+            }
+            case 8 -> {
                 System.out.println("""
                                    El reino nunca ha visto un periodo tan frutífero como este,
                                    Os habéis atiborrado de los manjares más exóticos como el kebab,
                                    La deshidratación producida por las salsas tan exquisitas
                                    terminaron por acabar con vos.
                                    """);
-            case 9 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Acaudalado");
+                }
+            }
+            case 9 -> {
                 System.out.println("""
                                    El pueblo, la iglesia y el ejército os han abandonado
                                    No se han molestado ni en saquear las pelusas de vuestros bolsillos.
                                    """);
-            case 10 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Paupérrimo");
+                }
+            }
+            case 10 -> {
                 System.out.println("""
                                    Cien puntas de lanza atraviesan vuestro cuerpo,
-                                   por error pisasteis una losa trampa que activó un mecanismo
-                                   que acabó con vuestra vida, pasarán cientos de años hasta que alguien
-                                   logre encontrar vuestro cuerpo, mas los gusanos os dejarán irreconocible.
+                                   no habéis soportado las heridas que durante vuestra travesía os han ido acribillando.
+                                   Esta última trampa acabó por terminar con vuestra vida, dejándoos como comida para los
+                                   gusanos que en algún futuro puedan encontraros
                                    """);
-            case 11 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Olvidado");
+                }
+            }
+            case 11 -> {
                 System.out.println("""
                                    El espejo no es sólido, al tocarlo lo atravesáis con la mano y os asustáis
                                    el miedo no se apodera de vos y lo atravesais completamente haciéndoos
@@ -253,16 +291,40 @@ public class Rey {
                                    mas conocéis que el futuro de vuestro reino ha quedado atrás y que el vuestro
                                    va a ser más diferente al de cualquier otro monarca.
                                    """);
-            case 12 ->
+                if(apelativo.equals("")){
+                    setApelativo(", el Perdido");
+                }
+            }
+            case 12 -> {
                 System.out.println("""
                                    Lleváis tiempo sufriendo por el unguento, el tiempo sólo os ponía más cargas
                                    a vuestra espalda, la tos era cada vez peor y vuestras facultades fallaban cada
                                    vez con más asiduidad. Vuestro último día se vio repleto de despedidas de
                                    vuestros familiares que lloraban a los pies de vuestra cama.
                                    """);
+                if(apelativo.equals("")){
+                    setApelativo(", el Enfermo");
+                }
+            }
             default -> {
             }
         }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Larga vida al rey "+nombre+apelativo);
+        System.out.println("1903 - "+(años+1903));
+        System.out.println("");
+        System.out.println("Años reinados: "+años);
+        System.out.println("");
+    }
+    
+    public void Trampa(){
+        if(salud<0){
+            trampa=true;    
+        }
+    }
+    public void mazmorraCompleta(){
+        mazmorraCompleta = true;
     }
 
     public int Muerto() {
@@ -275,8 +337,8 @@ public class Rey {
                 eje<=0? 7:
                 eco>=100? 8:
                 eco<=0? 9:
-                false? 10: //trampa
-                false? 11: //mazmorra realizada
+                trampa? 10: //trampa
+                mazmorraCompleta? 11: //mazmorra realizada
                 salud<0? 12:0;
     }
 }

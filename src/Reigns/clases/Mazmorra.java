@@ -105,7 +105,7 @@ public class Mazmorra {
         }
         for(int i = 0 ; i<sal.length ; i++){
             if(sal[i][0]==pos[0]&&sal[i][1]==pos[1]){
-                rey.añadir(0, 0, 0, 0, 0, -30, true, 0, 0, 0, 0, 0, 0);
+                rey.añadir(0, 0, 0, 0, 0, -35, true, 0, 0, 0, 0, 0, 0);
             }
         }
     }
@@ -153,5 +153,7 @@ public class Mazmorra {
         }
     }
     
-    
+    public boolean mazmorraCompletada(){
+        return mercurio&&venus&&marte&&jupiter&&saturno&&urano&&neptuno&&luna&&sol;
+    }
 }

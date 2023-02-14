@@ -4,12 +4,12 @@ import Reigns.clases.Mazmorra;
 import Reigns.clases.Rey;
 import java.util.Scanner;
 
-public class Pruebas2 {
-
+public class PruebasMazmorra {
     public static void main(String[] args) {
         Rey R = new Rey();
         Mazmorra m = new Mazmorra(R);
-        while (true) {
+        boolean mActiva = true;
+        while (mActiva) {
             R.alv();
             m.ToString();
             boolean a = true;
@@ -37,6 +37,12 @@ public class Pruebas2 {
                 }
             }
             m.detectarPos();
+            
+            if(R.Muerto()!=0){
+                R.alv();
+                R.fraseMuerto();
+                mActiva = false;
+            }
         }
     }
 }
