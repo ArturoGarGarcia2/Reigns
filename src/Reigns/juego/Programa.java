@@ -1,6 +1,8 @@
 package Reigns.juego;
 
 import Reigns.clases.*;
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,8 +20,12 @@ public class Programa {
         Campesino Cam = new Campesino();
         Burgues Bur = new Burgues();
         Aventurero Ave = new Aventurero();
-        Personaje[] corte = {Rei, Gen, Ext, Med, Ram, Car, Cam, Bur, Ave};
-        //                    0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8
+        Bufon Buf = new Bufon();
+        Emisario Emi = new Emisario();
+        Princesa PriA = new Princesa();
+        Principe PriE = new Principe();
+        Personaje[] corte = {Rei,Gen,Ext,Med,Ram,Car,Cam,Bur,Ave,Buf,Emi,PriA,PriE};
+        //                    0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11 , 12
         boolean repetir = true;
         boolean pruebaPersonaje = true;
 
@@ -60,7 +66,7 @@ public class Programa {
                 }
             }
             P.aplicar(resp, R);
-            if (personajeSalido == 8 && resp) {
+            if (P instanceof Aventurero && resp) {
                 Mazmorra m = new Mazmorra(R);
                 boolean mActiva = true;
                 while (mActiva) {

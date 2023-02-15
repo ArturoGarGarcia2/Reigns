@@ -114,6 +114,7 @@ public class Mazmorra {
         System.out.println("Salud:");
         System.out.println(rey.SaludToString());
         System.out.println("");
+        /*
         System.out.print("("+pos[0]+","+pos[1]+")");
         System.out.print("("+posMercurio[0]+","+posMercurio[1]+")");
         System.out.print("("+posVenus[0]+","+posVenus[1]+")");
@@ -125,6 +126,7 @@ public class Mazmorra {
         System.out.print("("+posLuna[0]+","+posLuna[1]+")");
         System.out.print("("+posSol[0]+","+posSol[1]+")");
         System.out.println("");
+        */
         for(int i = 6 ; i>-1 ; i--){
             for(int j = 0 ; j<7 ; j++){
                 System.out.print("##### ");

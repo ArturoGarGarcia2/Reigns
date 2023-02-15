@@ -89,6 +89,7 @@ public class Rey {
         System.out.println(SaludToString());
         */
         System.out.println(nombre+apelativo);
+        System.out.println("Año: "+(años+1309));
         System.out.println("");
         System.out.println("Iglesia: ");
         System.out.println(IglToString());
@@ -312,7 +313,7 @@ public class Rey {
         System.out.println("");
         System.out.println("");
         System.out.println("Larga vida al rey "+nombre+apelativo);
-        System.out.println("1903 - "+(años+1903));
+        System.out.println("1287 - "+(años+1309));
         System.out.println("");
         System.out.println("Años reinados: "+años);
         System.out.println("");

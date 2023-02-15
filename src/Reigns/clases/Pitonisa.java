@@ -6,37 +6,27 @@ import java.awt.Graphics;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Reina extends Personaje{
+public class Pitonisa extends Personaje{
 
-    public Reina() {
-        super("La Reina", 0);
+    public Pitonisa() {
+        super("La Pitonisa", 0);
         cargarFrases();
     }
     
     public void cargarFrases(){
-        String[] mensajes = {"Deberíamos mostrarle al pueblo lo unidos que estamos",
-                             "¡Están saqueando el almacén comunal!",
-                             "Deberíamos casarnos de nuevo"};
+        String[] mensajes = {"Puedo cambiar vuestro futuro, si así lo deseáis"};
         setMensajes(mensajes);
         
-        String[] rPositivas = {"Me parece idóneo",
-                                 "Mandad a la guarnición",
-                                 "Acepto"};
+        String[] rPositivas = {"Adelante (WIP)"};
         setrPositivas(rPositivas);
         
-        String[] rNegativas = {"Estamos bien así",
-                                 "No podemos hacer nada",
-                                 "Tengo cosas más importantes"};
+        String[] rNegativas = {"Marchaos"};
         setrNegativas(rNegativas);
         
-        String[] ePositivas = {": Igl +15 / Pob +10",
-                                 ": Pob: +15 / Eje -15",
-                                 ": Eco -30 / Pob +20 / Igl +30"};
+        String[] ePositivas = {""};
         setePositivas(ePositivas);
         
-        String[] eNegativas = {": Igl -15 / Pob -10",
-                                 ": Pob -30",
-                                 ": Igl -10 / Pob -10"};
+        String[] eNegativas = {""};
         seteNegativas(eNegativas);
     }
     
@@ -49,8 +39,6 @@ public class Reina extends Personaje{
     public void aplicar(boolean res,Rey R){
         switch (getNumero()) {
             case 0 -> R.añadir(0, 15, 10, 0, 0, 0, res, 0, -15, -10, 0, 0, 0);
-            case 1 -> R.añadir(0, 0, 15, -15, 0, 0, res, 0, 0, -30, 0, 0, 0);
-            case 2 -> R.añadir(0, 30, 20, 0, -30, 0, res, 0, -10, -10, 0, 0, 0);
             default -> {
             }
         }
