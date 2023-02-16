@@ -1,4 +1,4 @@
-package Reigns.juego;
+package Reigns.pruebas;
 
 import Reigns.clases.Extraño;
 import Reigns.clases.General;

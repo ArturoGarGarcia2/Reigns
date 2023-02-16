@@ -1,12 +1,12 @@
 
-package Reigns.juego;
+package Reigns.pruebas;
 
 import Reigns.clases.Baraja;
 
 public class PruebasCartas {
     public static void main(String[] args) {
         Baraja B = new Baraja();
-        B.Barajar();
+        //B.Barajar();
         for(int i = 0 ; i<75 ; i++){
             System.out.print(B.getCartasDisponibles());
             System.out.println(" "+B.sacarCarta());
