@@ -23,11 +23,11 @@ public class Rey {
         nombre = nombres[new Random().nextInt(nombres.length)];
         apelativo = "";
         ocu = 0;
-        igl = 40;
-        pob = 40;
-        eje = 40;
-        eco = 40;
-        salud = 100;
+        igl = 45;
+        pob = 45;
+        eje = 45;
+        eco = 45;
+        salud = 105;
     }
     
     public void añadirAño(){
@@ -54,7 +54,7 @@ public class Rey {
     }
 
     public void alv() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 105; i++) {
             System.out.println("");
         }
     }
@@ -75,6 +75,22 @@ public class Rey {
             eco += nEco;
             salud += nSalud;
         }
+    }
+
+    public void setOcu(int ocu) {
+        this.ocu = ocu;
+    }
+    public void setIgl(int igl) {
+        this.igl = igl;
+    }
+    public void setPob(int pob) {
+        this.pob = pob;
+    }
+    public void setEje(int eje) {
+        this.eje = eje;
+    }
+    public void setEco(int eco) {
+        this.eco = eco;
     }
     
     public void setApelativo(String a){
@@ -104,7 +120,7 @@ public class Rey {
     public String OcuToString() {
         String L = "";
         int a = this.ocu / 5;
-        int b = (100 - this.ocu) / 5;
+        int b = (105 - this.ocu) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -117,7 +133,7 @@ public class Rey {
     public String IglToString() {
         String L = "";
         int a = this.igl / 5;
-        int b = (100 - this.igl) / 5;
+        int b = (105 - this.igl) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -130,7 +146,7 @@ public class Rey {
     public String PobToString() {
         String L = "";
         int a = this.pob / 5;
-        int b = (100 - this.pob) / 5;
+        int b = (105 - this.pob) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -143,7 +159,7 @@ public class Rey {
     public String EjeToString() {
         String L = "";
         int a = this.eje / 5;
-        int b = (100 - this.eje) / 5;
+        int b = (105 - this.eje) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -156,7 +172,7 @@ public class Rey {
     public String EcoToString() {
         String L = "";
         int a = this.eco / 5;
-        int b = (100 - this.eco) / 5;
+        int b = (105 - this.eco) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -169,7 +185,7 @@ public class Rey {
     public String SaludToString() {
         String L = "";
         int a = this.salud / 5;
-        int b = (100 - this.salud) / 5;
+        int b = (105 - this.salud) / 5;
         for (int j = 0; j < a; j++) {
             L += "*";
         }
@@ -329,14 +345,14 @@ public class Rey {
     }
 
     public int Muerto() {
-        return ocu>100? 1 :
-                igl>=100? 2 :
+        return ocu>105? 1 :
+                igl>=105? 2 :
                 igl<=0? 3:
-                pob>=100? 4:
+                pob>=105? 4:
                 pob<=0? 5:
-                eje>=100? 6:
+                eje>=105? 6:
                 eje<=0? 7:
-                eco>=100? 8:
+                eco>=105? 8:
                 eco<=0? 9:
                 trampa? 10: //trampa
                 mazmorraCompleta? 11: //mazmorra realizada

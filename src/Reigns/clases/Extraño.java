@@ -30,26 +30,26 @@ public class Extraño extends Personaje{
                                                 "Del Ejército"};
         setrNegativas(rNegativas);
         
-        String[] ePositivas = {": Igl =50",
-                                                ": Pob =50",
-                                                ": Eje =50",
-                                                ": Eco =50"};
+        String[] ePositivas = {": Igl =55",
+                                                ": Pob =55",
+                                                ": Eje =55",
+                                                ": Eco =55"};
         setePositivas(ePositivas);
         
-        String[] eNegativas = {": Eco =50",
-                                                ": Igl =50",
-                                                ": Pob =50",
-                                                ": Eje =50"};
+        String[] eNegativas = {": Eco =55",
+                                                ": Igl =55",
+                                                ": Pob =55",
+                                                ": Eje =55"};
         seteNegativas(eNegativas);
     }
     
     @Override
     public void aplicar(boolean res,Rey R){
         switch (getNumero()) {
-            case 0 -> R.añadir(0, (-R.getIgl()+50), 0, 0, 0, 0, res, 0, 0, 0, 0, -R.getEco()+50, 0);
-            case 1 -> R.añadir(0, 0, (-R.getPob()+50), 0, 0, 0, res, 0, -R.getIgl()+50, 0, 0, 0, 0);
-            case 2 -> R.añadir(0, 0, 0, (-R.getEje()+50), 0, 0, res, 0, 0, -R.getPob()+50, 0, 0, 0);
-            case 3 -> R.añadir(0, 0, 0, 0, (-R.getEco()+50), 0, res, 0, 0, 0, -R.getEje()+50, 0, 0);
+            case 0 -> R.añadir(0, (-R.getIgl()+55), 0, 0, 0, 0, res, 0, 0, 0, 0, -R.getEco()+55, 0);
+            case 1 -> R.añadir(0, 0, (-R.getPob()+55), 0, 0, 0, res, 0, -R.getIgl()+55, 0, 0, 0, 0);
+            case 2 -> R.añadir(0, 0, 0, (-R.getEje()+55), 0, 0, res, 0, 0, -R.getPob()+55, 0, 0, 0);
+            case 3 -> R.añadir(0, 0, 0, 0, (-R.getEco()+55), 0, res, 0, 0, 0, -R.getEje()+55, 0, 0);
             default -> {
             }
         }

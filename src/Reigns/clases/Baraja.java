@@ -6,19 +6,24 @@ import java.util.Collections;
 
 public class Baraja {
 
-    private List<String> cartas;
+    private List<Carta> cartas;
 
-    public Baraja() {
+    public Baraja(boolean ordenado) {
         cartas = new ArrayList<>();
         String[] numero = {"As", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Lacayo", "Noble", "Guardián", "Reina", "Rey"};
         String[] palo = {" de Llaves", " de Cráneos", " de Dagas", " de Pentáculos", " de Nubes"};
 
         for (int i = 0; i < 75; i++) {
-            String carta = "";
-            carta += numero[i % 15];
-            carta += palo[i / 15];
+            Carta carta = new Carta((i%15),(i/15));
             cartas.add(carta);
         }
+        if(!ordenado){
+            Barajar();
+        }
+    }
+    
+    public List<Carta> getBaraja(){
+        return cartas;
     }
 
     public void Barajar() {
@@ -27,10 +32,10 @@ public class Baraja {
         }
     }
     
-    public String sacarCarta(){
-        String a = cartas.get(0);
+    public Carta sacarCarta(){
+        Carta c = cartas.get(0);
         cartas.remove(0);
-        return a;
+        return c;
     }
     
     public int getCartasDisponibles(){

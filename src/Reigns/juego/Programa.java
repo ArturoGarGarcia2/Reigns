@@ -24,8 +24,9 @@ public class Programa {
         Emisario Emi = new Emisario();
         Princesa PriA = new Princesa();
         Principe PriE = new Principe();
-        Personaje[] corte = {Rei,Gen,Ext,Med,Ram,Car,Cam,Bur,Ave,Buf,Emi,PriA,PriE};
-        //                    0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11 , 12
+        Pitonisa Pit = new Pitonisa();
+        Personaje[] corte = {Rei, Gen, Ext, Med, Ram, Car, Cam, Bur, Ave, Buf, Emi, PriA, PriE, Pit};
+        //                    0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10, 11 , 12 , 13
         boolean repetir = true;
         boolean pruebaPersonaje = true;
 
@@ -46,7 +47,7 @@ public class Programa {
                 P.setNumero(0);
                 pruebaPersonaje = false;
             }
-            */
+             */
 
             R.alv();
 
@@ -56,16 +57,65 @@ public class Programa {
             boolean resp = false;
             boolean a = true;
             while (a) {
-                int res = new Scanner(System.in).nextInt();
-                if (res == 1) {
+                String res = new Scanner(System.in).nextLine();
+                if (res.equals("1")) {
                     resp = true;
                     a = false;
-                } else if (res == 2) {
+                } else if (res.equals("2")) {
                     resp = false;
                     a = false;
                 }
             }
             P.aplicar(resp, R);
+            if (P instanceof Pitonisa pit && resp) {
+                if (!pit.getBaraja().isEmpty()) {
+                    R.alv();
+                    Carta C = pit.sacarCarta();
+                    pit.aplicarCarta(R, C);
+                    R.ToString();
+                    System.out.println("");
+                    System.out.println("La Pitonisa os dice...");
+                    System.out.println("Os ha salido " + C.getNombre());
+                    if (C.getNumero() > 10) {
+                        System.out.println("Habéis tenido suerte, pues esta carta aún es inútil");
+                    }
+                    System.out.println("");
+                    System.out.println("1. Ya veo");
+                    System.out.println("2. Está bien");
+                    boolean pitR = true;
+                    while (pitR) {
+                        String res = new Scanner(System.in).nextLine();
+                        if (res.equals("1")) {
+                            resp = true;
+                            pitR = false;
+                        } else if (res.equals("2")) {
+                            resp = false;
+                            pitR = false;
+                        }
+                    }
+                } else {
+                    R.alv();
+                    R.ToString();
+                    System.out.println("");
+                    System.out.println("La Pitonisa os dice...");
+                    System.out.println("Mi baraja se ha vaciado, no puedo serviros");
+                    System.out.println("");
+                    System.out.println("1. Ya veo");
+                    System.out.println("2. Está bien");
+                    boolean pitR = true;
+                    while (pitR) {
+                        int res = new Scanner(System.in).nextInt();
+                        if (res == 1) {
+                            resp = true;
+                            pitR = false;
+                        } else if (res == 2) {
+                            resp = false;
+                            pitR = false;
+                        }
+                    }
+                }
+            }
+
             if (P instanceof Aventurero && resp) {
                 Mazmorra m = new Mazmorra(R);
                 boolean mActiva = true;
@@ -74,21 +124,21 @@ public class Programa {
                     m.ToString();
                     boolean respMaz = true;
                     while (respMaz) {
-                        int res = new Scanner(System.in).nextInt();
+                        String res = new Scanner(System.in).nextLine();
                         switch (res) {
-                            case 1 -> {
+                            case "1" -> {
                                 m.mover(0, 1);
                                 respMaz = false;
                             }
-                            case 2 -> {
+                            case "2" -> {
                                 m.mover(1, 0);
                                 respMaz = false;
                             }
-                            case 3 -> {
+                            case "3" -> {
                                 m.mover(0, -1);
                                 respMaz = false;
                             }
-                            case 4 -> {
+                            case "4" -> {
                                 m.mover(-1, 0);
                                 respMaz = false;
                             }
@@ -124,7 +174,7 @@ public class Programa {
                         if (resp) {
                             mActiva = false;
                             R.setApelativo(", el Impertérrito");
-                            
+
                         } else {
                             R.mazmorraCompleta();
                             mActiva = false;
