@@ -98,7 +98,7 @@ public class Programa {
                     R.ToString();
                     System.out.println("");
                     System.out.println("La Pitonisa os dice...");
-                    System.out.println("Mi baraja se ha vaciado, no puedo serviros");
+                    System.out.println("Mi baraja se ha vaciado, no puedo serviros ahora mismo");
                     System.out.println("");
                     System.out.println("1. Ya veo");
                     System.out.println("2. Está bien");

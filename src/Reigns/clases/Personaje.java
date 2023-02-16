@@ -34,6 +34,10 @@ public abstract class Personaje {
         this.ePositivasEsp = new String[0];
         this.eNegativasEsp = new String[0];
     }
+    
+    public String getNombre(){
+        return nombre;
+    }
 
     public void setMensajes(String[] mensajes) {
         this.mensajes = mensajes;
