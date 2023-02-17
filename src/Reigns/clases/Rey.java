@@ -266,7 +266,7 @@ public class Rey {
                                    no habéis podido soportar la conquista del reino vecino.
                                    """);
                 if(apelativo.equals("")){
-                    setApelativo(", el Débil");
+                    setApelativo(", el Derrotado");
                 }
             }
             case 8 -> {
@@ -345,6 +345,7 @@ public class Rey {
     }
 
     public int Muerto() {
+        
         return ocu>105? 1 :
                 igl>=105? 2 :
                 igl<=0? 3:

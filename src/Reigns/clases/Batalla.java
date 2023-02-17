@@ -1,6 +1,8 @@
 
 package Reigns.clases;
 
+import java.util.Random;
+
 public class Batalla {
     private Personaje ene;
     private Rey rey;
@@ -32,6 +34,12 @@ public class Batalla {
         reyCargando = false;
         eneCargando = false;
         
+    }
+    
+    public String getMensajeRandom(){
+        String[] m = {"Voy a atacar ahora","Vais a caer","¡Rendíos ante mí!","Voy a defender","Voy a cargar"};
+        int a = new Random().nextInt(m.length);
+        return m[a];
     }
 
     public boolean rA() {
@@ -92,20 +100,31 @@ public class Batalla {
         System.out.println("Defendeos del ataque de "+ene.getNombre());
         System.out.println("");
         System.out.println("");
-        if(cargas()==0){
-            System.out.println("");
-        }else if(cargas()==1){
-            System.out.println("¡Podéis atacar!");
-        }else if(cargas()==2){
-            System.out.println("¡"+ene.getNombre()+" ha preparado un ataque!");
-        }else if(cargas()==3){
-            System.out.println("¡Podéis atacaros mutuamente!");
+        switch (cargas()) {
+            case 0:
+                System.out.println("");
+                break;
+            case 1:
+                System.out.println("¡Podéis atacar!");
+                break;
+            case 2:
+                System.out.println("¡"+ene.getNombre()+" ha preparado un ataque!");
+                break;
+            case 3:
+                System.out.println("¡Podéis atacaros mutuamente!");
+                break;
+            default:
+                break;
         }
         for(int i = 1 ; i<8 ; i++){
             String a = posRey==i? "R" :
                        posEne==i? "E" : "_";
             System.out.print(a+" ");
         }
+        System.out.println("");
+        System.out.println("");
+        System.out.println(ene.getNombre()+" os dice...");
+        System.out.println(getMensajeRandom());
         System.out.println("");
         System.out.println("""
                            1. Atacar
