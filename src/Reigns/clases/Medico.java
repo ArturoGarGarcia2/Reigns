@@ -66,6 +66,41 @@ public class Medico extends Personaje{
         int fY = 2;
         int pX = 340;
         int pY = 100;
-        dibujarCara(G,new Color(255, 219, 172),new Color(0,0,0),fX,fY,pX,pY);
+        dibujarCara(G,new Color(224,172,105),new Color(100,148,143),fX,fY,pX,pY);
+        
+//        int[] ojoDerX = {525, 550, 525, 500};
+//        int[] ojoDerY = {250, 300, 350, 300};
+//        int[] ojoIzqX = {675, 700, 675, 650};
+//        int[] ojoIzqY = {250, 300, 350, 300};
+        
+        int[] gafasIzqX = {450,475,500,550,575,600,550,500};
+        int[] gafasIzqY = {325,325,375,375,325,325,400,400};
+        gafasIzqX = formaModificada(gafasIzqX, fX, pX);
+        gafasIzqY = formaModificada(gafasIzqY, fY, pY);
+        int[] gafasDerX = {600,625,650,700,725,750,700,650};
+        int[] gafasDerY = {325,325,375,375,325,325,400,400};
+        gafasDerX = formaModificada(gafasDerX, fX, pX);
+        gafasDerY = formaModificada(gafasDerY, fY, pY);
+        
+        int[] patillaIzqX = {400,475,475,400};
+        int[] patillaIzqY = {300,300,325,325};
+        patillaIzqX = formaModificada(patillaIzqX, fX, pX);
+        patillaIzqY = formaModificada(patillaIzqY, fY, pY);
+        int[] patillaDerX = {725,800,800,725};
+        int[] patillaDerY = {300,300,325,325};
+        patillaDerX = formaModificada(patillaDerX, fX, pX);
+        patillaDerY = formaModificada(patillaDerY, fY, pY);
+        G.setColor(new Color(0,0,0));
+        G.fillPolygon(gafasIzqX, gafasIzqY, gafasIzqX.length);
+        G.fillPolygon(gafasDerX, gafasDerY, gafasDerX.length);
+        G.fillPolygon(patillaIzqX, patillaIzqY, patillaIzqX.length);
+        G.fillPolygon(patillaDerX, patillaDerY, patillaDerX.length);
+        
+        int[] barbaX = {400,550,650,800,800,650,550,400};
+        int[] barbaY = {325,450,450,325,450,550,550,450};
+        barbaX = formaModificada(barbaX, fX, pX);
+        barbaY = formaModificada(barbaY, fY, pY);
+        G.setColor(new Color(51,51,51));
+        G.fillPolygon(barbaX, barbaY, barbaX.length);
     }
 }

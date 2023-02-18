@@ -125,8 +125,8 @@ public abstract class Personaje {
     }
 
     public void dibujarCara(Graphics G, Color piel, Color ojos, int fX, int fY, int pX, int pY) {
-        int[] caraX = {400, 800, 800, 650, 550, 400};
-        int[] caraY = {150, 150, 450, 550, 550, 450};
+        int[] caraX = {400,550,650,800,800,650,550,400};
+        int[] caraY = {150,100,100,150,450,550,550,450};
         caraX = formaModificada(caraX, fX, pX);
         caraY = formaModificada(caraY, fY, pY);
         G.setColor(piel);

@@ -60,6 +60,6 @@ public class Extraño extends Personaje{
         int fY = 2;
         int pX = 340;
         int pY = 100;
-        dibujarCara(G,new Color(0,0,0),new Color(255,255,255),fX,fY,pX,pY);
+        dibujarCara(G,new Color(155,155,155),new Color(0,0,0),fX,fY,pX,pY);
     }
 }
